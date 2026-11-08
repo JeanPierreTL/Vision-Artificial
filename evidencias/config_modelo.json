@@ -1,0 +1,40 @@
+{
+  "labels": [
+    "neutro",
+    "izquierda",
+    "derecha"
+  ],
+  "inputShape": [
+    75,
+    6
+  ],
+  "channels": [
+    "ax",
+    "ay",
+    "az",
+    "gx",
+    "gy",
+    "gz"
+  ],
+  "sampleRateHz": 50,
+  "hop": 10,
+  "inputType": "float32",
+  "units": {
+    "accel": "g",
+    "gyro": "deg/s"
+  },
+  "normalization": "included_in_model",
+  "axes": "x adelante, y izquierda, z arriba; roll>0 = inclinar a la derecha (ay>0)",
+  "confidenceThreshold": 0.9,
+  "onConsecutive": 2,
+  "offConsecutive": 3,
+  "maxSignalSeconds": 10.0,
+  "modelType": "GraphModel",
+  "tensorflowjs": "4.22.0",
+  "tensorflow": "2.18.1",
+  "base": "1D-CNN desde cero",
+  "parameters": 6291,
+  "testAccuracy": 0.995,
+  "trainedOn": "datos SINTÉTICOS (solo valida el flujo)",
+  "limitation": "Tres clases. No detecta gestos desconocidos; puntajes no calibrados; no certificado."
+}
